@@ -21,6 +21,8 @@ app.set('views', __dirname + '/views')
 app.set('layout', 'layouts/layout')
 app.use(expressLayouts)
 app.use(express.static('public'))
+// i added the following line because browser could not locate javascripts folder
+app.use(express.static('public/javascripts'))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
 
 /* mongo db connection */
